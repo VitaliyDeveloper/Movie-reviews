@@ -15,7 +15,7 @@ export const Navigation = () => {
           </NavLinkStyle>
         </ItemsStyle>
         <ItemsStyle>
-          <NavLinkStyle to="/movie">Movie</NavLinkStyle>
+          <NavLinkStyle to="/movies">Movie</NavLinkStyle>
         </ItemsStyle>
       </ListStyle>
     </NavStyle>

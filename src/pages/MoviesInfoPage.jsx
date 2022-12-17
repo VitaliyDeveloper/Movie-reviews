@@ -1,4 +1,7 @@
+import { useFetchMovie } from 'hooks/useFetchMovie';
+
 export const MovieInfoPage = () => {
+  useFetchMovie();
   return (
     <>
       <h2>fdfdf</h2>

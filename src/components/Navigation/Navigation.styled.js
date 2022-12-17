@@ -23,6 +23,7 @@ export const NavStyle = styled.nav`
 
 export const ListStyle = styled.ul`
   display: flex;
+  align-items: center;
 `;
 
 export const ItemsStyle = styled.li`

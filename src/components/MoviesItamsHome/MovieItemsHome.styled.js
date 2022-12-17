@@ -11,8 +11,16 @@ export const MovieItemsStyle = styled.li`
   display: flex;
   text-decoration: none;
   color: #000;
-  justify-content: center;
+  justify-content: start;
+  align-items: center;
   flex-direction: column;
   margin: 10px;
   width: 150px;
+`;
+
+export const TitleStyle = styled.h2`
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
 `;

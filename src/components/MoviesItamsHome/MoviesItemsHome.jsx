@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import { MovieItemsStyle } from './MovieItemsHome.styled';
-import { MovieListStyle } from './MovieItemsHome.styled';
+import {
+  MovieItemsStyle,
+  TitleStyle,
+  MovieListStyle,
+} from './MovieItemsHome.styled';
 import noPoster from '../../img/no-poster.png';
 
 export const MoviesItemsHome = ({ movies }) => {
   return (
     <>
+      <TitleStyle>Popular movies today</TitleStyle>
       <MovieListStyle>
         {movies.map(({ id, title, name, poster }) => (
           <MovieItemsStyle key={id}>
@@ -17,7 +21,7 @@ export const MoviesItemsHome = ({ movies }) => {
               alt={title}
               height="200"
             />
-            <Link to={`moviesinfo/${id}`}>{title ? title : name}</Link>
+            <Link to={`movies/${id}`}>{title ? title : name}</Link>
           </MovieItemsStyle>
         ))}
       </MovieListStyle>
