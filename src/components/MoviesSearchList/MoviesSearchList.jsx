@@ -1,5 +1,13 @@
 import { Link, Outlet, useSearchParams } from 'react-router-dom';
-import { MovieItemsStyle, MovieListStyle } from './MovieSearchList.styled';
+import {
+  MovieItemsStyle,
+  MovieListStyle,
+  LinkStyle,
+  FormStyle,
+  BtnStyle,
+  InputStyle,
+  PosterStyle,
+} from './MovieSearchList.styled';
 import noPoster from '../../img/no-poster.png';
 
 export const MoviesSearchList = ({ movies }) => {
@@ -17,25 +25,29 @@ export const MoviesSearchList = ({ movies }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="query" />
-        <button>Search</button>
-      </form>
+      <FormStyle onSubmit={handleSubmit}>
+        <InputStyle
+          type="text"
+          name="query"
+          placeholder="Please enter name of movie"
+        />
+        <BtnStyle>SEARCH</BtnStyle>
+      </FormStyle>
       {movies && (
         <>
           <MovieListStyle>
             {movies.map(({ id, title, name, poster }) => (
               <MovieItemsStyle key={id}>
-                <img
+                <PosterStyle
                   src={
                     poster
                       ? `https://image.tmdb.org/t/p/w500/${poster}`
                       : noPoster
                   }
-                  alt={title}
+                  alt={title ? title : name}
                   height="200"
                 />
-                <Link to={id}>{title}</Link>
+                <LinkStyle to={`${id}`}>{title ? title : name}</LinkStyle>
               </MovieItemsStyle>
             ))}
           </MovieListStyle>

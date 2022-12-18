@@ -1,6 +1,14 @@
 @import-normalize;
 /* bring in normalize.css styles */
 
+:root {
+  --first-color-dark: #000b29;
+  --accent-color: #d70026;
+  --second-color: #edb83d;
+  --some-white-color: #f8f5f2;
+
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -17,4 +25,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: 100%;
 }

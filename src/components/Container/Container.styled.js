@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ContainerStyle = styled.div`
-  width: 300px;
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 `;

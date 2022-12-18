@@ -6,15 +6,15 @@ import { Route, Routes } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { fetchMovieById } from 'services/fetchMovieById';
-import { Cast } from './Cast';
-import { Reviews } from './Reviews';
+import { CastPage } from './CastPage';
+import { ReviewsPage } from './ReviewsPage';
 
 export const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
-    const movie = fetchMovieById(movieId).then(
+    fetchMovieById(movieId).then(
       ({
         original_title,
         genres,
@@ -24,7 +24,7 @@ export const MovieDetailsPage = () => {
         vote_average,
         vote_count,
       }) => {
-        const movieDetails = {
+        const movie = {
           title: original_title,
           genres: genres,
           description: overview,
@@ -34,18 +34,18 @@ export const MovieDetailsPage = () => {
           voteCount: vote_count,
         };
 
-        return setMovie(movieDetails);
+        return setMovie(movie);
       }
     );
   }, [movieId]);
   return (
     <>
-      {movie && <MovieDetails movieDetails={movie} />}
+      {movie && <MovieDetails movie={movie} />}
 
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+          <Route path="cast" element={<CastPage movie={movie} />} />
+          <Route path="reviews" element={<ReviewsPage movie={movie} />} />
         </Routes>
       </Suspense>
     </>
