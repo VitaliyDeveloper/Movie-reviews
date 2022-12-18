@@ -1,4 +1,22 @@
-import { useLocation, useNavigate, NavLink } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import {
+  BtnStyle,
+  DetailsContainer,
+  Poster,
+  DescriptionContainer,
+  DescriptionMovie,
+  DescriptionContainerInfo,
+  DescripContainerColumn,
+  GenresList,
+  GenresItems,
+  VoteContainer,
+  Vote,
+  VoteSpan,
+  AdditionalContainer,
+  AdditionalList,
+  AdditionalItems,
+  NavLinkStyle,
+} from './MovieDetails.styled';
 
 import noPoster from '../../img/no-poster.png';
 
@@ -14,52 +32,62 @@ export const MovieDetails = ({ movie }) => {
   console.log(movie);
   return (
     <>
-      <button type="button" onClick={onGoBack}>
+      <BtnStyle type="button" onClick={onGoBack}>
         Go back
-      </button>
-      <div>
-        <div>
-          <img
-            src={
-              movie.poster
-                ? `https://image.tmdb.org/t/p/w500/${movie.poster}`
-                : noPoster
-            }
-            alt={movie.title ? movie.title : movie.name}
-            height="500"
-          />
-          <div>
-            <h2>{movie.title ? movie.title : movie.name}</h2>
-            <p></p>
+      </BtnStyle>
+      <DetailsContainer>
+        <Poster
+          src={
+            movie.poster
+              ? `https://image.tmdb.org/t/p/w500/${movie.poster}`
+              : noPoster
+          }
+          alt={movie.title ? movie.title : movie.name}
+          height="500"
+        />
+        <h2>{movie.title ? movie.title : movie.name}</h2>
+        <DescripContainerColumn>
+          <DescriptionContainer>
             <h3>Overview</h3>
-            <p>{movie.description}</p>
-            <h3>Genres</h3>
-            <ul>
-              {movie.genres &&
-                movie.genres.map(({ name, id }) => <li key={id}>{name}</li>)}
-            </ul>
-          </div>
-          <p>Release date: {movie.releaseDate}</p>
-        </div>
-        <p>Vote average: {movie.voteAverage}</p>
-        <p>Vote count: {movie.voteCount}</p>
-      </div>
+            <DescriptionMovie>{movie.description}</DescriptionMovie>
+          </DescriptionContainer>
 
-      <div>
+          <DescriptionContainerInfo>
+            <h3>Genres</h3>
+            <GenresList>
+              {movie.genres &&
+                movie.genres.map(({ name, id }) => (
+                  <GenresItems key={id}>{name}</GenresItems>
+                ))}
+            </GenresList>
+            <VoteContainer>
+              <Vote>
+                Vote average: <VoteSpan>{movie.voteAverage}</VoteSpan>
+              </Vote>
+              <Vote>
+                Vote count: <VoteSpan>{movie.voteCount}</VoteSpan>
+              </Vote>
+            </VoteContainer>
+            <p>Release date: {movie.releaseDate}</p>
+          </DescriptionContainerInfo>
+        </DescripContainerColumn>
+      </DetailsContainer>
+
+      <AdditionalContainer>
         <h3>Additional Information</h3>
-        <ul>
-          <li>
-            <NavLink to="cast" state={{ from: subLocation }}>
+        <AdditionalList>
+          <AdditionalItems>
+            <NavLinkStyle to="cast" state={{ from: subLocation }}>
               Cast
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="reviews" state={{ from: subLocation }}>
+            </NavLinkStyle>
+          </AdditionalItems>
+          <AdditionalItems>
+            <NavLinkStyle to="reviews" state={{ from: subLocation }}>
               Reviews
-            </NavLink>
-          </li>
-        </ul>
-      </div>
+            </NavLinkStyle>
+          </AdditionalItems>
+        </AdditionalList>
+      </AdditionalContainer>
     </>
   );
 };

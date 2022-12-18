@@ -4,7 +4,7 @@ export const FooterContainer = styled.div`
   width: 100%;
   text-decoration: none;
   background-color: var(--first-color-dark);
-  box-shadow: 0 0 10px #757575;
+  box-shadow: 0 0 10px var(--first-color-dark);
   box-sizing: border-box;
   margin-top: 30px;
   margin-bottom: -50px;

@@ -14,7 +14,7 @@ export const NavLinkStyle = styled(NavLink)`
 export const NavStyle = styled.nav`
   text-decoration: none;
   background-color: var(--first-color-dark);
-  box-shadow: 0 0 10px #757575;
+  box-shadow: 0 0 10px var(--first-color-dark);
   box-sizing: border-box;
   margin-top: 0;
   margin-bottom: 30px;

@@ -19,6 +19,7 @@ export const MovieItemsStyle = styled.li`
   padding: 5px;
   border-radius: 5px;
   width: 150px;
+  min-height: 260px;
   background-color: var(--first-color-dark);
 
   &:focus,
