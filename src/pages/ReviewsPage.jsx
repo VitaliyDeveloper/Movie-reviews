@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'services/fetchMovieReviews';
 import { Reviews } from 'components/Reviews/Reviews';
+import { NotificationsReviews } from 'components/Notifications/Notifications';
 
 export const ReviewsPage = () => {
   const [reviews, setReviews] = useState(null);
@@ -28,6 +29,6 @@ export const ReviewsPage = () => {
   return reviews && reviews.length > 0 ? (
     <Reviews reviews={reviews} />
   ) : (
-    <h3>This movie don't have any reviews</h3>
+    <NotificationsReviews />
   );
 };

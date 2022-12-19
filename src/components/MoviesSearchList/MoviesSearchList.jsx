@@ -7,6 +7,7 @@ import {
   BtnStyle,
   InputStyle,
   PosterStyle,
+  MovieSearchContainer,
 } from './MovieSearchList.styled';
 import noPoster from '../../img/no-poster.png';
 
@@ -24,7 +25,7 @@ export const MoviesSearchList = ({ movies }) => {
   };
 
   return (
-    <>
+    <MovieSearchContainer>
       <FormStyle onSubmit={handleSubmit}>
         <InputStyle
           type="text"
@@ -54,6 +55,6 @@ export const MoviesSearchList = ({ movies }) => {
           <Outlet />
         </>
       )}
-    </>
+    </MovieSearchContainer>
   );
 };

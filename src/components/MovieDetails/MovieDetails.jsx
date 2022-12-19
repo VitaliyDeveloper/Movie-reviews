@@ -3,6 +3,8 @@ import {
   BtnStyle,
   DetailsContainer,
   Poster,
+  Title,
+  Subtitle,
   DescriptionContainer,
   DescriptionMovie,
   DescriptionContainerInfo,
@@ -45,14 +47,13 @@ export const MovieDetails = ({ movie }) => {
           alt={movie.title ? movie.title : movie.name}
           height="500"
         />
-        <h2>{movie.title ? movie.title : movie.name}</h2>
         <DescripContainerColumn>
-          <DescriptionContainer>
-            <h3>Overview</h3>
-            <DescriptionMovie>{movie.description}</DescriptionMovie>
-          </DescriptionContainer>
-
           <DescriptionContainerInfo>
+            <DescriptionContainer>
+              <Title>{movie.title ? movie.title : movie.name}</Title>
+              <h3>Overview</h3>
+              <DescriptionMovie>{movie.description}</DescriptionMovie>
+            </DescriptionContainer>
             <h3>Genres</h3>
             <GenresList>
               {movie.genres &&
@@ -74,7 +75,7 @@ export const MovieDetails = ({ movie }) => {
       </DetailsContainer>
 
       <AdditionalContainer>
-        <h3>Additional Information</h3>
+        <Subtitle>Additional Information</Subtitle>
         <AdditionalList>
           <AdditionalItems>
             <NavLinkStyle to="cast" state={{ from: subLocation }}>

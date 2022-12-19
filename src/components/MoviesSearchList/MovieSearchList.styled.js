@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const MovieSearchContainer = styled.div`
+  min-height: 100vh;
+`;
+
 export const FormStyle = styled.form`
   box-shadow: 0 0 20px var(--first-color-dark);
   padding: 10px;
