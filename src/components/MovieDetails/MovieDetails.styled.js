@@ -125,8 +125,19 @@ export const AdditionalList = styled.ul`
 export const AdditionalItems = styled.li`
   list-style: none;
   text-decoration: none;
+  margin-bottom: 10px;
 `;
 
 export const NavLinkStyle = styled(NavLink)`
+  font-size: large;
+  font-weight: bold;
+  color: var(--first-color-dark);
   text-decoration: none;
+  &:hover,
+  :focus {
+    color: var(--second-color);
+  }
+  &.active {
+    color: var(--accent-color);
+  }
 `;

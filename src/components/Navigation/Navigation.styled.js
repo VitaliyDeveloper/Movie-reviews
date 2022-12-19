@@ -6,6 +6,11 @@ export const NavLinkStyle = styled(NavLink)`
   font-size: 20px;
   color: var(--some-white-color);
 
+  &:hover,
+  :focus {
+    color: var(--second-color);
+  }
+
   &.active {
     color: var(--accent-color);
   }

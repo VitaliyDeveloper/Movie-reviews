@@ -19,11 +19,6 @@ export const Cast = ({ actors }) => {
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);
 
-  // useEffect(()=>{
-  //   setPages(actors.map((actor) => {
-  //     return cloneElement(actor)
-  // }), [])
-
   useEffect(() => {
     setPages(
       actors.map(actor => {
