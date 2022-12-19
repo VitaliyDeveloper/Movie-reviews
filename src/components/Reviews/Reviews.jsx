@@ -1,5 +1,6 @@
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   CastList,
   CastItem,
@@ -18,6 +19,9 @@ export const Reviews = ({ reviews }) => {
 
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);
+
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     setPages(

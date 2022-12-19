@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
-import { Suspense } from 'react';
+import { useEffect, useState, Suspense, Lazy } from 'react';
 import Loader from '../components/Loader/Loader';
 import { Route, Routes } from 'react-router-dom';
-// import { useFetchMovie } from 'hooks/useFetchMovie';
 import { useParams } from 'react-router-dom';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { fetchMovieById } from 'services/fetchMovieById';
-import { CastPage } from './CastPage';
-import { ReviewsPage } from './ReviewsPage';
+// import { CastPage } from './CastPage';
+// import { ReviewsPage } from './ReviewsPage';
+
+const CastPage = Lazy(() => import('./CastPage.jsx'));
+const ReviewsPage = Lazy(() => import('./ReviewsPage.jsx'));
 
 export const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
@@ -44,8 +45,8 @@ export const MovieDetailsPage = () => {
 
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="cast" element={<CastPage movie={movie} />} />
-          <Route path="reviews" element={<ReviewsPage movie={movie} />} />
+          <Route path="cast" element={<CastPage />} />
+          <Route path="reviews" element={<ReviewsPage />} />
         </Routes>
       </Suspense>
     </>

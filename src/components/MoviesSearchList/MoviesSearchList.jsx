@@ -1,4 +1,4 @@
-import { Link, Outlet, useSearchParams } from 'react-router-dom';
+import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
 import {
   MovieItemsStyle,
   MovieListStyle,
@@ -13,6 +13,8 @@ import noPoster from '../../img/no-poster.png';
 
 export const MoviesSearchList = ({ movies }) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  console.log(location);
   // const query = searchParams.get('moviename');
 
   const handleSubmit = event => {
@@ -48,7 +50,9 @@ export const MoviesSearchList = ({ movies }) => {
                   alt={title ? title : name}
                   height="200"
                 />
-                <LinkStyle to={`${id}`}>{title ? title : name}</LinkStyle>
+                <LinkStyle to={`${id}`} state={{ from: location }}>
+                  {title ? title : name}
+                </LinkStyle>
               </MovieItemsStyle>
             ))}
           </MovieListStyle>

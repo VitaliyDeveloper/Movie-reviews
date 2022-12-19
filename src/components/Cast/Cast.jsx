@@ -1,5 +1,6 @@
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useEffect, cloneElement } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   CastList,
   CastItem,
@@ -10,14 +11,14 @@ import {
   AllPageContainer,
 } from './Cast.styled';
 import noPhoto from '../../img/no-photo.jpg';
-import { useEffect } from 'react';
-import { cloneElement } from 'react';
 
 const PAGE_WIDTH = 600;
 
 export const Cast = ({ actors }) => {
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     setPages(

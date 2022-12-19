@@ -16,6 +16,7 @@ export const InputStyle = styled.input`
   padding: 10px;
   border-radius: 10px;
   border: none;
+  min-width: 250px;
 
   &:hover,
   :focus {
