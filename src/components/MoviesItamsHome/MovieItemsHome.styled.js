@@ -21,6 +21,7 @@ export const MovieItemsStyle = styled.li`
   width: 150px;
   min-height: 260px;
   background-color: var(--first-color-dark);
+  /* background-color: var(--some-white-color); */
 
   &:focus,
   :hover {

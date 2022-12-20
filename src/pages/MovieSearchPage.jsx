@@ -11,6 +11,7 @@ const MovieSearchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('moviename');
 
+  console.log(setSearchParams);
   useEffect(() => {
     if (query === null || query === '') {
       return;

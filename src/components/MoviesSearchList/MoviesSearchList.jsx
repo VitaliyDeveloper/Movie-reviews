@@ -17,7 +17,8 @@ const MoviesSearchList = ({ movies }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   console.log(location);
-  // const query = searchParams.get('moviename');
+  const query = searchParams.get('moviename');
+  console.log(query);
 
   const handleSubmit = event => {
     event.preventDefault();

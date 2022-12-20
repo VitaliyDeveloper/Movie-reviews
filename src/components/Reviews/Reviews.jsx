@@ -56,7 +56,7 @@ const Reviews = ({ reviews }) => {
             {reviews.map(({ id, author, text, details }) => {
               // console.log(details);
               const { avatar_path, username } = details;
-              // console.log(avatar_path);
+              console.log(avatar_path);
               return (
                 <CastItem key={id}>
                   <AvatarContainer>
