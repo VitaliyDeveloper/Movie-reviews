@@ -1,6 +1,6 @@
 import { FooterContainer, FooterAddress, FooterCopy } from './Footer.styled';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <FooterContainer>
       <FooterAddress>USA, New York</FooterAddress>
@@ -8,3 +8,5 @@ export const Footer = () => {
     </FooterContainer>
   );
 };
+
+export default Footer;

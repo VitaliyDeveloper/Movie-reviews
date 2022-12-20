@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
   BtnStyle,
@@ -22,12 +23,23 @@ import {
 
 import noPoster from '../../img/no-poster.png';
 
-export const MovieDetails = ({ movie }) => {
+const MovieDetails = ({ movie }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const subLocation = location.state;
 
   console.log(subLocation);
+
+  const {
+    name,
+    poster,
+    title,
+    description,
+    genres,
+    voteAverage,
+    voteCount,
+    releaseDate,
+  } = movie;
 
   const onGoBack = () => navigate(location?.state?.from ?? '/');
 
@@ -39,37 +51,33 @@ export const MovieDetails = ({ movie }) => {
       </BtnStyle>
       <DetailsContainer>
         <Poster
-          src={
-            movie.poster
-              ? `https://image.tmdb.org/t/p/w500/${movie.poster}`
-              : noPoster
-          }
-          alt={movie.title ? movie.title : movie.name}
+          src={poster ? `https://image.tmdb.org/t/p/w500/${poster}` : noPoster}
+          alt={title ? title : name}
           height="500"
         />
         <DescripContainerColumn>
           <DescriptionContainerInfo>
             <DescriptionContainer>
-              <Title>{movie.title ? movie.title : movie.name}</Title>
+              <Title>{title ? title : name}</Title>
               <h3>Overview</h3>
-              <DescriptionMovie>{movie.description}</DescriptionMovie>
+              <DescriptionMovie>{description}</DescriptionMovie>
             </DescriptionContainer>
             <h3>Genres</h3>
             <GenresList>
-              {movie.genres &&
-                movie.genres.map(({ name, id }) => (
+              {genres &&
+                genres.map(({ name, id }) => (
                   <GenresItems key={id}>{name}</GenresItems>
                 ))}
             </GenresList>
             <VoteContainer>
               <Vote>
-                Vote average: <VoteSpan>{movie.voteAverage}</VoteSpan>
+                Vote average: <VoteSpan>{voteAverage}</VoteSpan>
               </Vote>
               <Vote>
-                Vote count: <VoteSpan>{movie.voteCount}</VoteSpan>
+                Vote count: <VoteSpan>{voteCount}</VoteSpan>
               </Vote>
             </VoteContainer>
-            <p>Release date: {movie.releaseDate}</p>
+            <p>Release date: {releaseDate}</p>
           </DescriptionContainerInfo>
         </DescripContainerColumn>
       </DetailsContainer>
@@ -92,3 +100,24 @@ export const MovieDetails = ({ movie }) => {
     </>
   );
 };
+
+MovieDetails.prototype = {
+  movie: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      title: PropTypes.string,
+      poster: PropTypes.string,
+      releaseDate: PropTypes.string,
+      voteAverage: PropTypes.number,
+      voteCount: PropTypes.number,
+      genres: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          id: PropTypes.number,
+        })
+      ),
+    })
+  ).isRequired,
+};
+
+export default MovieDetails;

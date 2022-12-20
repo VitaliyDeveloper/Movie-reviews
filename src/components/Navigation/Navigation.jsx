@@ -5,7 +5,7 @@ import {
   ItemsStyle,
 } from './Navigation.styled';
 
-export const Navigation = () => {
+const Navigation = () => {
   return (
     <NavStyle>
       <ListStyle>
@@ -21,3 +21,5 @@ export const Navigation = () => {
     </NavStyle>
   );
 };
+
+export default Navigation;

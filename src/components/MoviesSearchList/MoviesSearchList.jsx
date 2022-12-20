@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
 import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
 import {
   MovieItemsStyle,
@@ -11,7 +13,7 @@ import {
 } from './MovieSearchList.styled';
 import noPoster from '../../img/no-poster.png';
 
-export const MoviesSearchList = ({ movies }) => {
+const MoviesSearchList = ({ movies }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   console.log(location);
@@ -59,6 +61,20 @@ export const MoviesSearchList = ({ movies }) => {
           <Outlet />
         </>
       )}
+      <ToastContainer />
     </MovieSearchContainer>
   );
 };
+
+MoviesSearchList.prototype = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      name: PropTypes.string,
+      poster: PropTypes.string,
+    })
+  ).isRequired,
+};
+
+export default MoviesSearchList;

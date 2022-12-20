@@ -1,10 +1,10 @@
-import { Cast } from 'components/Cast/Cast';
+import Cast from 'components/Cast/Cast';
 import { fetchMovieCredits } from 'services/fetchMovieCredits';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { NotificationsCast } from 'components/Notifications/Notifications';
 
-export const CastPage = () => {
+const CastPage = () => {
   const [actors, setActors] = useState(null);
   const { movieId } = useParams();
 
@@ -32,3 +32,5 @@ export const CastPage = () => {
     <NotificationsCast />
   );
 };
+
+export default CastPage;

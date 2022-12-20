@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { MoviesItemsHome } from 'components/MoviesItamsHome/MoviesItemsHome';
+import MoviesItemsHome from 'components/MoviesItamsHome/MoviesItemsHome';
 import { fetchTrendingMovies } from 'services/fetchTrending';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -31,3 +31,5 @@ export const HomePage = () => {
 
   return movies && <MoviesItemsHome movies={movies} />;
 };
+
+export default HomePage;

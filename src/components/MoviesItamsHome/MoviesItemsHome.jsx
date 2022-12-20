@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Outlet } from 'react-router-dom';
 import {
   MovieItemsStyle,
@@ -9,7 +10,9 @@ import {
 } from './MovieItemsHome.styled';
 import noPoster from '../../img/no-poster.png';
 
-export const MoviesItemsHome = ({ movies }) => {
+const MoviesItemsHome = ({ movies }) => {
+  // const location = useLocation();
+
   return (
     <>
       <TitleStyle>Popular movies today</TitleStyle>
@@ -31,3 +34,16 @@ export const MoviesItemsHome = ({ movies }) => {
     </>
   );
 };
+
+MoviesItemsHome.prototype = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      name: PropTypes.string,
+      poster: PropTypes.string,
+    })
+  ).isRequired,
+};
+
+export default MoviesItemsHome;

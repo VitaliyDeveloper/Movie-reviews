@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'services/fetchMovieReviews';
-import { Reviews } from 'components/Reviews/Reviews';
+import Reviews from 'components/Reviews/Reviews';
 import { NotificationsReviews } from 'components/Notifications/Notifications';
 
-export const ReviewsPage = () => {
+const ReviewsPage = () => {
   const [reviews, setReviews] = useState(null);
   const { movieId } = useParams();
 
@@ -32,3 +32,5 @@ export const ReviewsPage = () => {
     <NotificationsReviews />
   );
 };
+
+export default ReviewsPage;

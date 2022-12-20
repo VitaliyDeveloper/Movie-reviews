@@ -1,16 +1,16 @@
-import { useEffect, useState, Suspense, Lazy } from 'react';
-import Loader from '../components/Loader/Loader';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { MovieDetails } from 'components/MovieDetails/MovieDetails';
+import Loader from '../components/Loader/Loader';
+import MovieDetails from 'components/MovieDetails/MovieDetails';
 import { fetchMovieById } from 'services/fetchMovieById';
 // import { CastPage } from './CastPage';
 // import { ReviewsPage } from './ReviewsPage';
 
-const CastPage = Lazy(() => import('./CastPage.jsx'));
-const ReviewsPage = Lazy(() => import('./ReviewsPage.jsx'));
+const CastPage = lazy(() => import('./CastPage'));
+const ReviewsPage = lazy(() => import('./ReviewsPage'));
 
-export const MovieDetailsPage = () => {
+const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
 
@@ -52,3 +52,5 @@ export const MovieDetailsPage = () => {
     </>
   );
 };
+
+export default MovieDetailsPage;

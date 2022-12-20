@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import toastStyles from 'services/toastStyle';
+import 'react-toastify/dist/ReactToastify.css';
 import { fetchSearchMovies } from 'services/fetchSearchMovies';
-import { MoviesSearchList } from 'components/MoviesSearchList/MoviesSearchList';
+import MoviesSearchList from 'components/MoviesSearchList/MoviesSearchList';
 
-export const MovieSearchPage = () => {
+const MovieSearchPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('moviename');
@@ -15,7 +18,13 @@ export const MovieSearchPage = () => {
     async function fetchMovies() {
       const getMovie = await fetchSearchMovies(query).then(({ results }) => {
         const moviesArr = [];
-
+        if (results.length === 0) {
+          toast.error(
+            'Sorry, there are no images matching your search query. Please try again.',
+            toastStyles
+          );
+          return;
+        }
         results.map(
           ({ id, title, name, poster_path, vote_average, vote_count }) => {
             const movie = {
@@ -41,3 +50,5 @@ export const MovieSearchPage = () => {
 
   return <MoviesSearchList movies={movies} />;
 };
+
+export default MovieSearchPage;

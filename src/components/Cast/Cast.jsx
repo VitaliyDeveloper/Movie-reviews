@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect, cloneElement } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -14,7 +15,7 @@ import noPhoto from '../../img/no-photo.jpg';
 
 const PAGE_WIDTH = 600;
 
-export const Cast = ({ actors }) => {
+const Cast = ({ actors }) => {
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);
   const location = useLocation();
@@ -72,3 +73,15 @@ export const Cast = ({ actors }) => {
     </MainContainer>
   );
 };
+
+Cast.prototype = {
+  actors: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      photo: PropTypes.string,
+    })
+  ).isRequired,
+};
+
+export default Cast;

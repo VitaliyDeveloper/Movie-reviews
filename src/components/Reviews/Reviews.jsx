@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, cloneElement } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   CastList,
@@ -11,10 +12,9 @@ import {
   AllPageContainer,
   AvatarContainer,
 } from './Reviews.styled';
-import { cloneElement } from 'react';
 import noAvatar from '../../img/no-photo.jpg';
 
-export const Reviews = ({ reviews }) => {
+const Reviews = ({ reviews }) => {
   const PAGE_WIDTH = 750;
 
   const [pages, setPages] = useState([]);
@@ -53,19 +53,13 @@ export const Reviews = ({ reviews }) => {
         <AllPageContainer style={{ transform: `translate(${offset}px)` }}>
           <CastList>
             {reviews.map(({ id, author, text, details }) => {
-              console.log(details.avatar_path);
+              console.log(details);
+              const { avatar_path, username } = details;
+              console.log(avatar_path);
               return (
                 <CastItem key={id}>
                   <AvatarContainer>
-                    <Poster
-                      src={
-                        details.avatar_path
-                          ? 'https://www.gravatar.com/avatar/992eef352126a53d7e141bf9e8707576.jpg'
-                          : noAvatar
-                      }
-                      alt={details.name}
-                      width="50px"
-                    />
+                    <Poster src={noAvatar} alt={username} width="50px" />
                     <h3>{author}</h3>
                   </AvatarContainer>
                   <Text>{text}</Text>
@@ -79,3 +73,21 @@ export const Reviews = ({ reviews }) => {
     </MainContainer>
   );
 };
+
+Reviews.prototype = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      author: PropTypes.string,
+      text: PropTypes.string,
+      details: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          avatar_path: PropTypes.string,
+        })
+      ),
+    })
+  ).isRequired,
+};
+
+export default Reviews;
