@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const Container = styled.div`
-  height: 100vh;
+export const MovieDetContainer = styled.div`
+  min-height: 100vh;
 `;
 
 export const BtnStyle = styled.button`
@@ -43,7 +43,7 @@ export const DetailsContainer = styled.div`
   align-items: center;
   background-color: rgba(255, 255, 255, 1);
   width: max-content;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 20px;
   box-shadow: 0 0 15px var(--first-color-dark);
 `;

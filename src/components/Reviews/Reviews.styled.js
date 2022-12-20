@@ -7,7 +7,7 @@ export const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 300px;
-  width: 100vh;
+  width: 850px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 0 15px var(--first-color-dark);
 

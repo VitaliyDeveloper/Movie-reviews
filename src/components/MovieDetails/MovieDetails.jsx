@@ -39,6 +39,7 @@ const MovieDetails = ({ movie }) => {
     voteAverage,
     voteCount,
     releaseDate,
+    // MovieDetContainer,
   } = movie;
 
   const onGoBack = () => navigate(location?.state?.from ?? '/');
@@ -46,6 +47,7 @@ const MovieDetails = ({ movie }) => {
   // console.log(movie);
   return (
     <>
+      {/* <MovieDetContainer> */}
       <BtnStyle type="button" onClick={onGoBack}>
         <FaChevronLeft />
         <BtnText>GO BACK</BtnText>
@@ -98,6 +100,7 @@ const MovieDetails = ({ movie }) => {
           </AdditionalItems>
         </AdditionalList>
       </AdditionalContainer>
+      {/* </MovieDetContainer> */}
     </>
   );
 };

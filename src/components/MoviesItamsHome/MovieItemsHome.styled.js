@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const MovieHomeContainer = styled.div`
+  min-height: 100vh;
+`;
+
 export const MovieListStyle = styled.ul`
   display: flex;
   text-decoration: none;

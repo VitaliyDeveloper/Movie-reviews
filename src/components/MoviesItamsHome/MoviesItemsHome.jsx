@@ -7,6 +7,7 @@ import {
   MovieListStyle,
   LinkStyle,
   PosterStyle,
+  MovieHomeContainer,
 } from './MovieItemsHome.styled';
 import noPoster from '../../img/no-poster.png';
 
@@ -15,26 +16,28 @@ const MoviesItemsHome = ({ movies }) => {
 
   return (
     <>
-      <TitleStyle>Popular movies today</TitleStyle>
-      <MovieListStyle>
-        {movies.map(({ id, title, name, poster }) => (
-          <MovieItemsStyle key={id}>
-            <LinkStyle to={`movies/${id}`} state={{ from: location }}>
-              <PosterStyle
-                src={
-                  poster
-                    ? `https://image.tmdb.org/t/p/w500/${poster}`
-                    : noPoster
-                }
-                alt={title}
-                height="200"
-              />
-              {title ? title : name}
-            </LinkStyle>
-          </MovieItemsStyle>
-        ))}
-      </MovieListStyle>
-      <Outlet />
+      <MovieHomeContainer>
+        <TitleStyle>Popular movies today</TitleStyle>
+        <MovieListStyle>
+          {movies.map(({ id, title, name, poster }) => (
+            <MovieItemsStyle key={id}>
+              <LinkStyle to={`movies/${id}`} state={{ from: location }}>
+                <PosterStyle
+                  src={
+                    poster
+                      ? `https://image.tmdb.org/t/p/w500/${poster}`
+                      : noPoster
+                  }
+                  alt={title}
+                  height="200"
+                />
+                {title ? title : name}
+              </LinkStyle>
+            </MovieItemsStyle>
+          ))}
+        </MovieListStyle>
+        <Outlet />
+      </MovieHomeContainer>
     </>
   );
 };
