@@ -10,7 +10,7 @@ export async function fetchMovieReviews(movieId) {
     },
   });
   const fetchMovieReviews = response.data;
-  console.log(fetchMovieReviews);
+  // console.log(fetchMovieReviews);
 
   return fetchMovieReviews;
 }

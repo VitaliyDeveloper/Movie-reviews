@@ -1,3 +1,5 @@
+// import { useLocation } from 'react-router-dom';
+
 import {
   NavLinkStyle,
   NavStyle,
@@ -6,6 +8,9 @@ import {
 } from './Navigation.styled';
 
 const Navigation = () => {
+  // const location = useLocation();
+  // console.log(location);
+
   return (
     <NavStyle>
       <ListStyle>

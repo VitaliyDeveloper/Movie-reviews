@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const NoticeContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 3px solid var(--accent-color);
+  background-color: rgba(255, 255, 255, 1);
+  color: var(--accent-color);
+  padding: 20px;
   margin: 20px auto;
   width: 600px;
-  border-radius: 20px;
   text-align: center;
+  /* border: 3px solid var(--accent-color); */
+  /* border-radius: 20px; */
 `;
 
 export const NoticeText = styled.p`

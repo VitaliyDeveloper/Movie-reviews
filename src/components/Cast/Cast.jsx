@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect, cloneElement } from 'react';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import {
   CastList,
   CastItem,
@@ -18,8 +18,8 @@ const PAGE_WIDTH = 600;
 const Cast = ({ actors }) => {
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);
-  const location = useLocation();
-  console.log(location);
+  // const location = useLocation();
+  // console.log(location);
 
   useEffect(() => {
     setPages(

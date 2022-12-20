@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FaChevronLeft } from 'react-icons/fa';
 import {
   BtnStyle,
+  BtnText,
   DetailsContainer,
   Poster,
   Title,
@@ -19,6 +21,7 @@ import {
   AdditionalList,
   AdditionalItems,
   NavLinkStyle,
+  NavLinkBtn,
 } from './MovieDetails.styled';
 
 import noPoster from '../../img/no-poster.png';
@@ -26,9 +29,6 @@ import noPoster from '../../img/no-poster.png';
 const MovieDetails = ({ movie }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const subLocation = location.state;
-
-  console.log(subLocation);
 
   const {
     name,
@@ -43,11 +43,12 @@ const MovieDetails = ({ movie }) => {
 
   const onGoBack = () => navigate(location?.state?.from ?? '/');
 
-  console.log(movie);
+  // console.log(movie);
   return (
     <>
       <BtnStyle type="button" onClick={onGoBack}>
-        Go back
+        <FaChevronLeft />
+        <BtnText>GO BACK</BtnText>
       </BtnStyle>
       <DetailsContainer>
         <Poster
@@ -86,13 +87,13 @@ const MovieDetails = ({ movie }) => {
         <Subtitle>Additional Information</Subtitle>
         <AdditionalList>
           <AdditionalItems>
-            <NavLinkStyle to="cast" state={{ from: subLocation }}>
-              Cast
+            <NavLinkStyle to="cast" state={{ from: location.state.from }}>
+              <NavLinkBtn>Cast</NavLinkBtn>
             </NavLinkStyle>
           </AdditionalItems>
           <AdditionalItems>
-            <NavLinkStyle to="reviews" state={{ from: subLocation }}>
-              Reviews
+            <NavLinkStyle to="reviews" state={{ from: location.state.from }}>
+              <NavLinkBtn>Reviews</NavLinkBtn>
             </NavLinkStyle>
           </AdditionalItems>
         </AdditionalList>

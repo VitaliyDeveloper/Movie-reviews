@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
 import {
   MovieItemsStyle,
@@ -43,16 +43,16 @@ const MoviesSearchList = ({ movies }) => {
           <MovieListStyle>
             {movies.map(({ id, title, name, poster }) => (
               <MovieItemsStyle key={id}>
-                <PosterStyle
-                  src={
-                    poster
-                      ? `https://image.tmdb.org/t/p/w500/${poster}`
-                      : noPoster
-                  }
-                  alt={title ? title : name}
-                  height="200"
-                />
                 <LinkStyle to={`${id}`} state={{ from: location }}>
+                  <PosterStyle
+                    src={
+                      poster
+                        ? `https://image.tmdb.org/t/p/w500/${poster}`
+                        : noPoster
+                    }
+                    alt={title ? title : name}
+                    height="200"
+                  />
                   {title ? title : name}
                 </LinkStyle>
               </MovieItemsStyle>

@@ -12,7 +12,7 @@ export async function fetchSearchMovies(keyword) {
     },
   });
   const fetchSearchMovies = response.data;
-  console.log(fetchSearchMovies);
+  // console.log(fetchSearchMovies);
 
   return fetchSearchMovies;
 }

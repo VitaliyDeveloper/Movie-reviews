@@ -17,7 +17,7 @@ export const MovieItemsStyle = styled.li`
   flex-direction: column;
   margin: 10px;
   padding: 5px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   width: 150px;
   min-height: 260px;
   background-color: var(--first-color-dark);

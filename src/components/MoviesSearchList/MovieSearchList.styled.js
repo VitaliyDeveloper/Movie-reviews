@@ -13,8 +13,8 @@ export const FormStyle = styled.form`
 
 export const InputStyle = styled.input`
   margin-right: 20px;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 15px;
+  /* border-radius: 10px; */
   border: none;
   min-width: 250px;
 
@@ -27,8 +27,8 @@ export const InputStyle = styled.input`
 export const BtnStyle = styled.button`
   color: var(--some-white-color);
   background-color: var(--first-color-dark);
-  border-radius: 10px;
-  padding: 10px;
+  /* border-radius: 10px; */
+  padding: 15px;
   border: none;
   cursor: pointer;
 
@@ -57,7 +57,7 @@ export const MovieItemsStyle = styled.li`
   flex-direction: column;
   margin: 10px;
   padding: 5px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   width: 150px;
   min-height: 260px;
   background-color: var(--first-color-dark);

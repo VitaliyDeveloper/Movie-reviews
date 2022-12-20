@@ -1,6 +1,6 @@
 // import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import {
   MovieItemsStyle,
   TitleStyle,
@@ -11,7 +11,7 @@ import {
 import noPoster from '../../img/no-poster.png';
 
 const MoviesItemsHome = ({ movies }) => {
-  // const location = useLocation();
+  const location = useLocation();
 
   return (
     <>
@@ -19,14 +19,18 @@ const MoviesItemsHome = ({ movies }) => {
       <MovieListStyle>
         {movies.map(({ id, title, name, poster }) => (
           <MovieItemsStyle key={id}>
-            <PosterStyle
-              src={
-                poster ? `https://image.tmdb.org/t/p/w500/${poster}` : noPoster
-              }
-              alt={title}
-              height="200"
-            />
-            <LinkStyle to={`movies/${id}`}>{title ? title : name}</LinkStyle>
+            <LinkStyle to={`movies/${id}`} state={{ from: location }}>
+              <PosterStyle
+                src={
+                  poster
+                    ? `https://image.tmdb.org/t/p/w500/${poster}`
+                    : noPoster
+                }
+                alt={title}
+                height="200"
+              />
+              {title ? title : name}
+            </LinkStyle>
           </MovieItemsStyle>
         ))}
       </MovieListStyle>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import toastStyles from 'services/toastStyle';
 import 'react-toastify/dist/ReactToastify.css';
 import { fetchSearchMovies } from 'services/fetchSearchMovies';

@@ -11,11 +11,12 @@ import {
   WindowS,
   AllPageContainer,
   AvatarContainer,
+  TitleName,
 } from './Reviews.styled';
 import noAvatar from '../../img/no-photo.jpg';
 
 const Reviews = ({ reviews }) => {
-  const PAGE_WIDTH = 750;
+  const PAGE_WIDTH = 840;
 
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -53,14 +54,14 @@ const Reviews = ({ reviews }) => {
         <AllPageContainer style={{ transform: `translate(${offset}px)` }}>
           <CastList>
             {reviews.map(({ id, author, text, details }) => {
-              console.log(details);
+              // console.log(details);
               const { avatar_path, username } = details;
-              console.log(avatar_path);
+              // console.log(avatar_path);
               return (
                 <CastItem key={id}>
                   <AvatarContainer>
                     <Poster src={noAvatar} alt={username} width="50px" />
-                    <h3>{author}</h3>
+                    <TitleName>{author}</TitleName>
                   </AvatarContainer>
                   <Text>{text}</Text>
                 </CastItem>

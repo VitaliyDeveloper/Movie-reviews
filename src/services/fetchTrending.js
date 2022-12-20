@@ -13,7 +13,7 @@ export async function fetchTrendingMovies() {
     },
   });
   const trendingMovies = response.data;
-  console.log(trendingMovies);
+  // console.log(trendingMovies);
 
   return trendingMovies;
 }

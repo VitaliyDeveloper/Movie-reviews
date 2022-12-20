@@ -18,6 +18,7 @@ const MovieDetailsPage = () => {
     fetchMovieById(movieId).then(
       ({
         original_title,
+        original_name,
         genres,
         overview,
         poster_path,
@@ -27,6 +28,7 @@ const MovieDetailsPage = () => {
       }) => {
         const movie = {
           title: original_title,
+          name: original_name,
           genres: genres,
           description: overview,
           poster: poster_path,

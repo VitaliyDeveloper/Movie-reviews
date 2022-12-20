@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
+  padding: 20px;
   margin: 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 300px;
   width: 100vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 3px solid var(--accent-color);
-  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 15px var(--first-color-dark);
+
+  /* border: 3px solid var(--accent-color); */
+  /* border-radius: 20px; */
 `;
 
 export const WindowS = styled.div`

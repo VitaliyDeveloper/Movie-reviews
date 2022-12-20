@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import Layout from './Layout/Layout';
+import { NotFound } from './NotFound/NotFound';
 // import { HomePage } from 'pages/HomePage';
 // import { MovieSearchPage } from 'pages/MovieSearchPage';
 // import { MovieDetailsPage } from 'pages/MovieDetailsPage';
@@ -16,9 +17,9 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/movies" element={<MovieSearchPage />}></Route>
+          <Route path="/movies" element={<MovieSearchPage />} />
           <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
-          {/* <Route path="*" element={<  HomePage />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Suspense>
