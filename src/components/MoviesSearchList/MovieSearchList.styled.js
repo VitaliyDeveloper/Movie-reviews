@@ -61,9 +61,11 @@ export const MovieItemsStyle = styled.li`
   width: 150px;
   min-height: 260px;
   background-color: var(--first-color-dark);
+  transition: 200ms ease-in-out;
 
   &:focus,
   :hover {
+    transform: scale(1.1);
     box-shadow: 0 0 15px var(--first-color-dark);
   }
 `;

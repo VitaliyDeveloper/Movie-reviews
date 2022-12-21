@@ -38,6 +38,7 @@ const MoviesItemsHome = ({ movies }) => {
         </MovieListStyle>
         <Outlet />
       </MovieHomeContainer>
+      {/* </ParticlesSnow> */}
     </>
   );
 };

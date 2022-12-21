@@ -1,5 +1,6 @@
 import Navigation from 'components/Navigation/Navigation';
 import Footer from 'components/Footer/Footer';
+// import ParticlesSnow from 'components/ParticlesSnow/ParticlesSnow';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
@@ -12,8 +13,10 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer>
+        {/* <ParticlesSnow /> */}
         <Footer />
       </footer>
+      {/* </ParticlesSnow> */}
     </>
   );
 };
