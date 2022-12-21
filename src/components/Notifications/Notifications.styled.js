@@ -15,3 +15,12 @@ export const NoticeText = styled.p`
   text-transform: uppercase;
   font-weight: bold;
 `;
+
+export const TitleStyle = styled.h2`
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+  color: var(--first-color-dark);
+  box-shadow: 0 0 20px var(--first-color-dark);
+`;

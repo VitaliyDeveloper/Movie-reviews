@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const MovieHomeContainer = styled.div`
-  min-height: 100vh;
-`;
-
 export const MovieListStyle = styled.ul`
   display: flex;
   text-decoration: none;
+  align-items: start;
+  justify-content: center;
   list-style: none;
   flex-wrap: wrap;
-  justify-content: center;
+  height: 100%;
 `;
 
 export const MovieItemsStyle = styled.li`
@@ -25,7 +23,6 @@ export const MovieItemsStyle = styled.li`
   width: 150px;
   min-height: 260px;
   background-color: var(--first-color-dark);
-  /* background-color: var(--some-white-color); */
   transition: 200ms ease-in-out;
 
   &:focus,
@@ -37,15 +34,6 @@ export const MovieItemsStyle = styled.li`
 
 export const PosterStyle = styled.img`
   margin-bottom: 5px;
-`;
-
-export const TitleStyle = styled.h2`
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 50px;
-  text-align: center;
-  color: var(--first-color-dark);
-  box-shadow: 0 0 20px var(--first-color-dark);
 `;
 
 export const LinkStyle = styled(Link)`

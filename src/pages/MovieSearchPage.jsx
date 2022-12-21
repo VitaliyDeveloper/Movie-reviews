@@ -5,6 +5,7 @@ import toastStyles from 'services/toastStyle';
 import 'react-toastify/dist/ReactToastify.css';
 import { fetchSearchMovies } from 'services/fetchSearchMovies';
 import MoviesSearchList from 'components/MoviesSearchList/MoviesSearchList';
+import MovieList from 'components/MovieList/MovieList';
 
 const MovieSearchPage = () => {
   const [movies, setMovies] = useState([]);
@@ -49,7 +50,12 @@ const MovieSearchPage = () => {
     fetchMovies();
   }, [query]);
 
-  return <MoviesSearchList movies={movies} />;
+  return (
+    <>
+      <MoviesSearchList />
+      {movies && <MovieList movies={movies} />}
+    </>
+  );
 };
 
 export default MovieSearchPage;

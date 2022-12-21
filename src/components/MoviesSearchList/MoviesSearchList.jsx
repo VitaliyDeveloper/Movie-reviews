@@ -1,19 +1,13 @@
-import PropTypes from 'prop-types';
 import { ToastContainer } from 'react-toastify';
-import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import {
-  MovieItemsStyle,
-  MovieListStyle,
-  LinkStyle,
   FormStyle,
   BtnStyle,
   InputStyle,
-  PosterStyle,
   MovieSearchContainer,
 } from './MovieSearchList.styled';
-import noPoster from '../../img/no-poster.png';
 
-const MoviesSearchList = ({ movies }) => {
+const MoviesSearchList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   console.log(location);
@@ -39,43 +33,9 @@ const MoviesSearchList = ({ movies }) => {
         />
         <BtnStyle>SEARCH</BtnStyle>
       </FormStyle>
-      {movies && (
-        <>
-          <MovieListStyle>
-            {movies.map(({ id, title, name, poster }) => (
-              <MovieItemsStyle key={id}>
-                <LinkStyle to={`${id}`} state={{ from: location }}>
-                  <PosterStyle
-                    src={
-                      poster
-                        ? `https://image.tmdb.org/t/p/w500/${poster}`
-                        : noPoster
-                    }
-                    alt={title ? title : name}
-                    height="200"
-                  />
-                  {title ? title : name}
-                </LinkStyle>
-              </MovieItemsStyle>
-            ))}
-          </MovieListStyle>
-          <Outlet />
-        </>
-      )}
       <ToastContainer />
     </MovieSearchContainer>
   );
-};
-
-MoviesSearchList.prototype = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      name: PropTypes.string,
-      poster: PropTypes.string,
-    })
-  ).isRequired,
 };
 
 export default MoviesSearchList;

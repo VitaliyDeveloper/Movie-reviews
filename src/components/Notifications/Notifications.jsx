@@ -1,4 +1,8 @@
-import { NoticeContainer, NoticeText } from './Notifications.styled';
+import {
+  NoticeContainer,
+  NoticeText,
+  TitleStyle,
+} from './Notifications.styled';
 
 export const NotificationsReviews = () => {
   return (
@@ -14,4 +18,8 @@ export const NotificationsCast = () => {
       <NoticeText>We did not find any information about the actors</NoticeText>
     </NoticeContainer>
   );
+};
+
+export const TitleHome = () => {
+  return <TitleStyle>Popular movies today</TitleStyle>;
 };

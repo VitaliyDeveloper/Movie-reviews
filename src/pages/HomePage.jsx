@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import MoviesItemsHome from 'components/MoviesItamsHome/MoviesItemsHome';
+import MovieList from 'components/MovieList/MovieList';
+import { TitleHome } from 'components/Notifications/Notifications';
 import { fetchTrendingMovies } from 'services/fetchTrending';
 
 const HomePage = () => {
@@ -29,7 +30,12 @@ const HomePage = () => {
     });
   }, []);
 
-  return movies && <MoviesItemsHome movies={movies} />;
+  return (
+    <>
+      <TitleHome />
+      {movies && <MovieList movies={movies} />}
+    </>
+  );
 };
 
 export default HomePage;
