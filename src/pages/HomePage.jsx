@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import MovieList from 'components/MovieList/MovieList';
 import { TitleHome } from 'components/Notifications/Notifications';
 import { fetchTrendingMovies } from 'services/fetchTrending';
+import ParticlesSnow from '../components/ParticlesSnow/ParticlesSnow';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -34,6 +35,7 @@ const HomePage = () => {
     <>
       <TitleHome />
       {movies && <MovieList movies={movies} />}
+      <ParticlesSnow id="tsparticles" />
     </>
   );
 };
