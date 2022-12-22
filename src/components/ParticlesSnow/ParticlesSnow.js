@@ -21,6 +21,10 @@ const ParticlesSnow = props => {
       //     },
       //   },
       // },
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
       particles: {
         number: { value: 400 },
         links: {

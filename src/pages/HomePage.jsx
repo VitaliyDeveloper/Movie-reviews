@@ -35,7 +35,7 @@ const HomePage = () => {
     <>
       <TitleHome />
       {movies && <MovieList movies={movies} />}
-      <ParticlesSnow id="tsparticles" />
+      {/* <ParticlesSnow id="tsparticles" /> */}
     </>
   );
 };
