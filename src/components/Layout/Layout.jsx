@@ -14,10 +14,8 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer>
-        {/* <ParticlesSnow /> */}
         <Footer />
       </footer>
-      {/* </ParticlesSnow> */}
     </>
   );
 };
