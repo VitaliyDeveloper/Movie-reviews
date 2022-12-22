@@ -47,7 +47,6 @@ const MovieDetails = ({ movie }) => {
   // console.log(movie);
   return (
     <>
-      {/* <MovieDetContainer> */}
       <BtnStyle type="button" onClick={onGoBack}>
         <FaChevronLeft />
         <BtnText>GO BACK</BtnText>
@@ -100,7 +99,6 @@ const MovieDetails = ({ movie }) => {
           </AdditionalItems>
         </AdditionalList>
       </AdditionalContainer>
-      {/* </MovieDetContainer> */}
     </>
   );
 };
