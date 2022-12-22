@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import santaHat from '../../img/santa-hat.png';
 
 export const NavLinkStyle = styled(NavLink)`
   text-decoration: none;
@@ -13,6 +14,21 @@ export const NavLinkStyle = styled(NavLink)`
 
   &.active {
     color: var(--accent-color);
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotateZ(30deg);
+      background-image: url(${santaHat});
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 13px;
+      height: 18px;
+      /* z-index: 10005; */
+    }
   }
 `;
 
@@ -33,6 +49,22 @@ export const ListStyle = styled.ul`
 `;
 
 export const ItemsStyle = styled.li`
+  position: relative;
+  padding-top: 2px;
+  padding-right: 5px;
+
   list-style: none;
+  margin-right: 20px;
+`;
+
+export const SantaHat = styled.img`
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotateZ(30deg);
+  display: none;
+`;
+
+export const Logo = styled.img`
   margin-right: 20px;
 `;

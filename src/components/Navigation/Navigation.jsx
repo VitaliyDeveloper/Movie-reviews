@@ -1,19 +1,19 @@
 // import { useLocation } from 'react-router-dom';
-
+// import logotype from '../../img/logotype.png';
+import logotype from '../../img/logotype2.png';
 import {
   NavLinkStyle,
   NavStyle,
   ListStyle,
   ItemsStyle,
+  Logo,
 } from './Navigation.styled';
 
 const Navigation = () => {
-  // const location = useLocation();
-  // console.log(location);
-
   return (
     <NavStyle>
       <ListStyle>
+        <Logo src={logotype} width="50" height="50" />
         <ItemsStyle>
           <NavLinkStyle to="/" end>
             Home

@@ -9,7 +9,7 @@ export const SantaStyle = styled.div`
   height: 75px;
   background-image: url('../../img/santa-1.gif');
   animation: santa 15s linear infinite;
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
   z-index: 10005;
 
   &:hover {
@@ -19,12 +19,12 @@ export const SantaStyle = styled.div`
   @keyframes santa {
     from {
       /* left: 0px; */
-      right: 0%;
+      left: 0%;
       /* transform: rotateY(-180deg); */
     }
     to {
       /* left: calc(100% - 50px); */
-      right: 100%;
+      left: 100%;
     }
   }
 `;
