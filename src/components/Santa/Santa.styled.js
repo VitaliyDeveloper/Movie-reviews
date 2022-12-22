@@ -5,12 +5,10 @@ export const SantaStyle = styled.div`
   position: fixed;
   bottom: 0;
   right: 0;
-  /* content: ''; */
   width: 52px;
   height: 75px;
-  /* background-color: aliceblue; */
   background-image: url('../../img/santa-1.gif');
-  animation: santa 10s linear infinite alternate-reverse;
+  animation: santa 15s linear infinite;
   transform: rotateY(180deg);
   z-index: 10005;
 
@@ -20,11 +18,13 @@ export const SantaStyle = styled.div`
 
   @keyframes santa {
     from {
-      left: 0px;
+      /* left: 0px; */
+      right: 0%;
+      /* transform: rotateY(-180deg); */
     }
     to {
-      left: calc(100% - 50px);
-      transform: rotateY(-180deg);
+      /* left: calc(100% - 50px); */
+      right: 100%;
     }
   }
 `;

@@ -4,7 +4,6 @@ import { loadSlim } from 'tsparticles-slim';
 // import { Engine } from 'tsparticles-engine';
 // import { loadFull } from 'react-tsparticles';
 import { useCallback, useMemo } from 'react';
-// import particlesConfig from './config/particlesconfig';
 
 const ParticlesSnow = props => {
   const options = useMemo(() => {
