@@ -10,7 +10,7 @@ import {
 const MoviesSearchList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-  console.log(location);
+  console.log('MoviesSearchList location', location);
   const query = searchParams.get('moviename');
   console.log(query);
 

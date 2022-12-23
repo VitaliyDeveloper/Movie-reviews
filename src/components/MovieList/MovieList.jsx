@@ -11,7 +11,7 @@ import noPoster from '../../img/no-poster.png';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
-  console.log(location);
+  console.log('MovieList location-', location);
   return (
     <>
       <MovieListStyle>

@@ -43,6 +43,7 @@ const MovieDetails = ({ movie }) => {
 
   const onGoBack = () => navigate(location?.state?.from ?? '/');
 
+  console.log('MovieDetails Location-', location);
   // console.log(movie);
   return (
     <>

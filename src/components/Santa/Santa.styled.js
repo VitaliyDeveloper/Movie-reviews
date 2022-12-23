@@ -18,7 +18,7 @@ export const SantaStyle = styled.div`
   @keyframes santa {
     from {
       /* left: 0px; */
-      left: 0%;
+      left: -10%;
       /* transform: rotateY(-180deg); */
     }
     to {
