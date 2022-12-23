@@ -42,7 +42,7 @@ const MovieDetails = ({ movie }) => {
     // MovieDetContainer,
   } = movie;
 
-  const onGoBack = () => navigate(location?.state?.from ?? '/');
+  const onGoBack = () => navigate(location.state?.from ?? '/');
 
   // console.log(movie);
   return (
@@ -88,12 +88,12 @@ const MovieDetails = ({ movie }) => {
         <Subtitle>Additional Information</Subtitle>
         <AdditionalList>
           <AdditionalItems>
-            <NavLinkStyle to="cast" state={{ from: location?.state?.from }}>
+            <NavLinkStyle to="cast" state={{ from: location.state?.from }}>
               <NavLinkBtn>Cast</NavLinkBtn>
             </NavLinkStyle>
           </AdditionalItems>
           <AdditionalItems>
-            <NavLinkStyle to="reviews" state={{ from: location?.state?.from }}>
+            <NavLinkStyle to="reviews" state={{ from: location.state?.from }}>
               <NavLinkBtn>Reviews</NavLinkBtn>
             </NavLinkStyle>
           </AdditionalItems>

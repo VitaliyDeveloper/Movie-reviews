@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const SantaStyle = styled.div`
   display: block;
   position: fixed;
-  bottom: 0;
+  bottom: 15px;
   right: 0;
   width: 52px;
   height: 75px;
-  background-image: url('../../img/santa-1.gif');
+  /* background-image: url('../../img/santa-1.gif'); */
   animation: santa 15s linear infinite;
   /* transform: rotateY(180deg); */
   z-index: 10005;
