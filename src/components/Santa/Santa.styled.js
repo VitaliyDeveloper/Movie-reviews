@@ -7,7 +7,6 @@ export const SantaStyle = styled.div`
   right: 0;
   width: 52px;
   height: 75px;
-  /* background-image: url('../../img/santa-1.gif'); */
   animation: santa 15s linear infinite;
   /* transform: rotateY(180deg); */
   z-index: 10005;
