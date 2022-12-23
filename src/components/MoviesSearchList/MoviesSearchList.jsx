@@ -17,7 +17,7 @@ const MoviesSearchList = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
-
+    console.log('FORM SUBMIT', form);
     setSearchParams({ moviename: form.elements.query.value });
 
     form.reset();

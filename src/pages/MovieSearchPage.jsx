@@ -52,7 +52,7 @@ const MovieSearchPage = () => {
 
   return (
     <>
-      <MoviesSearchList />
+      <MoviesSearchList onSubmit={query} />
       {movies && <MovieList movies={movies} />}
     </>
   );
