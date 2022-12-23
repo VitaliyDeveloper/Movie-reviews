@@ -25,8 +25,8 @@ export const NavLinkStyle = styled(NavLink)`
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-      width: 13px;
-      height: 18px;
+      width: 12px;
+      height: 15px;
       /* z-index: 10005; */
     }
   }
