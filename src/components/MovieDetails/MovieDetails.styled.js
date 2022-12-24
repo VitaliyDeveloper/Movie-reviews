@@ -6,29 +6,58 @@ export const MovieDetContainer = styled.div`
 `;
 
 export const BtnStyle = styled.button`
-  /* position: fixed; */
-  /* right: 30px; */
-  /* top: 30px; */
-  /* border-radius: 10px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.7;
-  width: 200px;
-  color: var(--some-white-color);
-  background-color: var(--first-color-dark);
-  padding: 10px;
-  border: none;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  @media screen and (min-width: 320px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    width: 200px;
+    color: var(--some-white-color);
+    background-color: var(--first-color-dark);
+    padding: 10px;
+    border: none;
+    margin-bottom: 20px;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  &:hover,
-  :focus {
-    opacity: 1;
-    color: var(--accent-color);
-    box-shadow: 0 0 10px var(--first-color-dark);
+    &:hover,
+    :focus {
+      opacity: 1;
+      color: var(--accent-color);
+      box-shadow: 0 0 10px var(--first-color-dark);
+    }
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 480px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    width: 200px;
+    color: var(--some-white-color);
+    background-color: var(--first-color-dark);
+    padding: 10px;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+    cursor: pointer;
+
+    &:hover,
+    :focus {
+      opacity: 1;
+      color: var(--accent-color);
+      box-shadow: 0 0 10px var(--first-color-dark);
+    }
   }
 `;
 
@@ -36,51 +65,65 @@ export const BtnText = styled.span`
   margin: 0 0 0 5px;
 `;
 
+///////////////////////////////////////////////
 export const DetailsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 1);
-  width: max-content;
-  margin: 20px auto;
-  padding: 20px;
-  box-shadow: 0 0 15px var(--first-color-dark);
+  @media screen and (min-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 20px auto;
+    padding: 10px;
+    box-shadow: 0 0 15px var(--first-color-dark);
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 1100px) {
+    flex-direction: row;
+    width: max-content;
+  }
 `;
 
 export const Poster = styled.img`
-  /* border-radius: 20px; */
   box-shadow: 0 0 15px var(--first-color-dark);
+  margin: 0 auto;
+
+  @media screen and (min-width: 768) {
+    height: 300px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    margin-left: 20px;
+  }
 `;
 
 export const Title = styled.h2`
-  /* background-color: rgba(255, 255, 255, 0.5); */
   color: var(--accent-color);
   text-align: center;
   margin: 10px auto;
+  width: 250px;
+
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
 `;
 
 export const DescriptionContainer = styled.div`
-  /* background-color: rgba(255, 255, 255, 0.5); */
   max-width: 600px;
   color: var(--first-color-dark);
-  /* margin: 20px; */
   padding: 10px;
-  /* border-radius: 20px; */
 `;
 
 export const DescriptionContainerInfo = styled.div`
   background-color: rgba(255, 255, 255, 1);
-  min-width: 600px;
+  width: 80%;
   color: var(--first-color-dark);
-  margin: 20px;
   padding: 10px;
-  /* border-radius: 20px; */
-  /* box-shadow: 0 0 15px var(--first-color-dark); */
-  min-height: 480px;
-`;
-
-export const DescripContainerColumn = styled.div`
   margin: 0;
   display: flex;
   flex-direction: column;

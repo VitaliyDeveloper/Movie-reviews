@@ -11,7 +11,6 @@ import {
   DescriptionContainer,
   DescriptionMovie,
   DescriptionContainerInfo,
-  DescripContainerColumn,
   GenresList,
   GenresItems,
   VoteContainer,
@@ -55,33 +54,32 @@ const MovieDetails = ({ movie }) => {
         <Poster
           src={poster ? `https://image.tmdb.org/t/p/w500/${poster}` : noPoster}
           alt={title ? title : name}
-          height="500"
+          height="400"
         />
-        <DescripContainerColumn>
-          <DescriptionContainerInfo>
-            <DescriptionContainer>
-              <Title>{title ? title : name}</Title>
-              <h3>Overview</h3>
-              <DescriptionMovie>{description}</DescriptionMovie>
-            </DescriptionContainer>
-            <h3>Genres</h3>
-            <GenresList>
-              {genres &&
-                genres.map(({ name, id }) => (
-                  <GenresItems key={id}>{name}</GenresItems>
-                ))}
-            </GenresList>
-            <VoteContainer>
-              <Vote>
-                Vote average: <VoteSpan>{voteAverage}</VoteSpan>
-              </Vote>
-              <Vote>
-                Vote count: <VoteSpan>{voteCount}</VoteSpan>
-              </Vote>
-            </VoteContainer>
-            <p>Release date: {releaseDate}</p>
-          </DescriptionContainerInfo>
-        </DescripContainerColumn>
+
+        <DescriptionContainerInfo>
+          <DescriptionContainer>
+            <Title>{title ? title : name}</Title>
+            <h3>Overview</h3>
+            <DescriptionMovie>{description}</DescriptionMovie>
+          </DescriptionContainer>
+          <h3>Genres</h3>
+          <GenresList>
+            {genres &&
+              genres.map(({ name, id }) => (
+                <GenresItems key={id}>{name}</GenresItems>
+              ))}
+          </GenresList>
+          <VoteContainer>
+            <Vote>
+              Vote average: <VoteSpan>{voteAverage}</VoteSpan>
+            </Vote>
+            <Vote>
+              Vote count: <VoteSpan>{voteCount}</VoteSpan>
+            </Vote>
+          </VoteContainer>
+          <p>Release date: {releaseDate}</p>
+        </DescriptionContainerInfo>
       </DetailsContainer>
 
       <AdditionalContainer>

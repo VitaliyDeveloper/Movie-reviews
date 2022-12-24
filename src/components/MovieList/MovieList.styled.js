@@ -9,6 +9,7 @@ export const MovieListStyle = styled.ul`
   list-style: none;
   flex-wrap: wrap;
   height: 100%;
+  padding: 10px;
 `;
 
 export const MovieItemsStyle = styled.li`

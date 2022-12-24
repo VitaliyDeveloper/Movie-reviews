@@ -41,6 +41,9 @@ export const NavStyle = styled.nav`
   margin-bottom: 30px;
   padding: 20px;
   width: 100%;
+
+  @media screen and (min-width: 480px) {
+  }
 `;
 
 export const ListStyle = styled.ul`

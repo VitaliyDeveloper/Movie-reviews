@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-  margin: 20px auto;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 300px;
-  width: 850px;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 15px var(--first-color-dark);
+  @media screen and (min-width: 320px) {
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 15px var(--first-color-dark);
+    width: 200px;
+  }
 
-  /* border: 3px solid var(--accent-color); */
-  /* border-radius: 20px; */
+  @media screen and (min-width: 768px) {
+    min-height: 300px;
+    width: 850px;
+  }
 `;
 
 export const WindowS = styled.div`
@@ -39,12 +42,21 @@ export const CastList = styled.ul`
 `;
 
 export const CastItem = styled.li`
-  display: flex;
-  list-style: none;
-  align-items: center;
-  margin: 0 20px;
-  min-width: 800px;
-  max-width: 800px;
+  @media screen and (min-width: 320px) {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0 20px;
+    max-width: 200px;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1100px) {
+    min-width: 800px;
+    max-width: 800px;
+  }
 `;
 
 export const AvatarContainer = styled.div`

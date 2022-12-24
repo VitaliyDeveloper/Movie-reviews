@@ -10,9 +10,6 @@ export const MainContainer = styled.div`
   width: 100vh;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 0 15px var(--first-color-dark);
-
-  /* border: 3px solid var(--accent-color); */
-  /* border-radius: 20px; */
 `;
 
 export const WindowS = styled.div`
@@ -35,10 +32,7 @@ export const CastList = styled.ul`
   display: flex;
   flex-wrap: no-wrap;
   justify-content: center;
-  /* background-color: rgba(255, 255, 255, 0.5); */
   padding: 20px;
-  /* border-bottom: 3px solid var(--accent-color);
-  border-top: 3px solid var(--accent-color); */
 `;
 
 export const CastItem = styled.li`
