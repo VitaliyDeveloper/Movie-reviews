@@ -3,12 +3,16 @@ import styled from 'styled-components';
 export const NoticeContainer = styled.div`
   background-color: rgba(255, 255, 255, 1);
   color: var(--accent-color);
-  padding: 20px;
-  margin: 20px auto;
-  width: 600px;
+  padding: 10px;
+  margin: 10px auto;
   text-align: center;
-  /* border: 3px solid var(--accent-color); */
-  /* border-radius: 20px; */
+  width: 300px;
+
+  @media screen and (min-width: 768px) {
+    margin: 20px auto;
+    padding: 20px;
+    width: 600px;
+  }
 `;
 
 export const NoticeText = styled.p`

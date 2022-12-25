@@ -16,7 +16,7 @@ import {
 import noAvatar from '../../img/no-photo.jpg';
 
 const Reviews = ({ reviews }) => {
-  const PAGE_WIDTH = 840;
+  const PAGE_WIDTH = 240;
 
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);

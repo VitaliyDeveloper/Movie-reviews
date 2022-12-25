@@ -13,7 +13,7 @@ import {
 } from './Cast.styled';
 import noPhoto from '../../img/no-photo.jpg';
 
-const PAGE_WIDTH = 600;
+const PAGE_WIDTH = 300;
 
 const Cast = ({ actors }) => {
   const [pages, setPages] = useState([]);

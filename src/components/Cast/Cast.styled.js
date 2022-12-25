@@ -7,9 +7,25 @@ export const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 300px;
-  width: 100vh;
+  width: 250px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 0 15px var(--first-color-dark);
+
+  @media screen and (min-width: 480px) {
+    width: 400px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 500px;
+  }
+
+  @media screen and (min-width: 880px) {
+    width: 600px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    width: 850px;
+  }
 `;
 
 export const WindowS = styled.div`
